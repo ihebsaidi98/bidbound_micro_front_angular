@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Livraison</title>
+  <style>
+    /* Add your custom styles here */
+    header {
+      background-color: #f2f2f2;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #f2f2f2;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    div.container {
+      padding: 20px;
+      margin: 50px auto;
+      width: 50%;
+      border: 1px solid #f2f2f2;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1> Livraison</h1>
+  </header>
+
+  <div class="container">
+    <h2>Add Livraison</h2>
+    <form>
+      <label for="numero">Numero:</label>
+      <input type="text" id="numero" [(ngModel)]="newLivraison.numero" name="numero" required><br><br>
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" [(ngModel)]="newLivraison.date" name="date" required><br><br>
+
+      <label for="montantTotal">Montant Total:</label>
+      <input type="number" id="montantTotal" [(ngModel)]="newLivraison.montantTotal" name="montantTotal" required><br><br>
+
+      <button (click)="addLivraison()">Add Livraison</button>
+    </form>
+
+    <h2>Livraison List</h2>
+    <ul>
+      <li *ngFor="let livraison of livraisons">
+        {{ livraison.id }} - {{ livraison.numero }} - {{ livraison.date | date: 'short' }} - {{ livraison.montantTotal }}
+        <button (click)="deleteLivraison(livraison.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>bidbound 2023</p>
+  </footer>
+</body>
+
+</html>
