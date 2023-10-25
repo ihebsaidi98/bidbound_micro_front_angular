@@ -1,0 +1,46 @@
+/* user.component.scss */
+
+/* Style the container */
+div {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style the headings */
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Style the form labels */
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Style the form inputs */
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Style the submit button */
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style the submit button on hover */
+button:hover {
+  background-color: #45a049;
+}
