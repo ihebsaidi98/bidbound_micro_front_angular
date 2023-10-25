@@ -12,11 +12,11 @@ export class EurekaService {
   constructor() {
     this.client = new Eureka({
       instance: {
-        app: 'your-application-name',
-        hostName: 'localhost', // Your host name
-        ipAddr: '127.0.0.1', // Your IP address
+        app: 'bidbound_front',
+        hostName: 'localhost',
+        ipAddr: '127.0.0.1',
         port: {
-          '$': 3309, // Your server port
+          '$': 3309,
           '@enabled': true,
         },
         vipAddress: 'jq.test.something.com',

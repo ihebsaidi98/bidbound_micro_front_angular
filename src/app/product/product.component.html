@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product</title>
+  <style>
+    /* Add your custom styles here */
+    header {
+      background-color: #f2f2f2;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #f2f2f2;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    div.container {
+      padding: 20px;
+      margin: 50px auto;
+      width: 50%;
+      border: 1px solid #f2f2f2;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1> Product</h1>
+  </header>
+
+  <div class="container">
+    <h2>Add Product</h2>
+    <form>
+      <label for="description">Description:</label>
+      <input type="text" id="description" [(ngModel)]="newProduct.description" name="description" required><br><br>
+
+      <label for="price">Price:</label>
+      <input type="number" id="price" [(ngModel)]="newProduct.prix" name="price" required><br><br>
+
+      <button (click)="addProduct()">Add Product</button>
+    </form>
+
+    <h2>Product List</h2>
+    <ul>
+      <li *ngFor="let product of products">
+        {{ product.id }} - {{ product.description }} - {{ product.prix }}
+        <button (click)="deleteProduct(product.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>bidbound 2023</p>
+  </footer>
+</body>
+
+</html>
