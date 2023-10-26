@@ -14,6 +14,8 @@ export class LivraisonComponent implements OnInit {
     date: new Date(),
     montantTotal: 0
   };
+
+
   livraisons: Livraison[] = []; // Array to hold the list of livraisons
 
   constructor(private livraisonService: LivraisonService) {}
