@@ -20,6 +20,9 @@ export class LivraisonService {
     return this.http.get<Livraison>(`${this.baseUrl}/Alllivraison/${id}`);
   }
 
+
+
+
   addLivraison(livraison: Livraison): Observable<Livraison> {
     return this.http.post<Livraison>(`${this.baseUrl}/addlivraison`, livraison);
   }

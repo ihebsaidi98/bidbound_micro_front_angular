@@ -26,12 +26,12 @@ export class EurekaService {
         },
       },
       eureka: {
-        host: 'localhost', // Your Eureka server host
-        port: 8761, // Your Eureka server port
+        host: 'localhost',
+        port: 8761,
         servicePath: '/eureka/apps/',
       },
     });
-    this.client.start((error: any) => { // Explicitly define the type for the error parameter
+    this.client.start((error: any) => {
       if (error) {
         console.error('Error registering with Eureka:', error);
       } else {

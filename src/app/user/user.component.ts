@@ -29,4 +29,26 @@ export class UserComponent implements OnInit {
       }
     );
   }
+
+  getUser(id: number): void {
+    this.userService.getUserById(id).subscribe(
+      (user: User) => {
+        console.log('User retrieved:', user);
+      },
+      (error: any) => {
+        console.error('Error fetching user:', error);
+      }
+    );
+  }
+
+  deleteUser(id: number): void {
+    this.userService.deleteUser(id).subscribe(
+      () => {
+        console.log('User deleted');
+      },
+      (error: any) => {
+        console.error('Error deleting user:', error);
+      }
+    );
+  }
 }
